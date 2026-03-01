@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: Copyright © 2026 Caleb Cushing
+# SPDX-License-Identifier: MIT
+
+[versions]
+immutables = "2.10.1"
+spotbugs = "6.1.6"
+jspecify = "1.0.0"
+jetbrains-annotations = "24.1.0"
+
+[plugins]
+spotbugs = { id = "com.github.spotbugs", version.ref = "spotbugs" }
+
+[libraries]
+immutables-bom = { module = "org.immutables:bom", version.ref = "immutables" }
+immutables-core = { module = "org.immutables:value" }
+immutables-builder = { module = "org.immutables:builder" }
+jspecify = { module = "org.jspecify:jspecify", version.ref = "jspecify" }
+jetbrains-annotations = { module = "org.jetbrains:annotations", version.ref = "jetbrains-annotations" }
+spotbugs = { module = "com.github.spotbugs:spotbugs", version = "4.9.3" }
+
+[bundles]
+immutables = ["immutables-builder"]

@@ -1,0 +1,5 @@
+// SPDX-FileCopyrightText: Copyright © 2026 Caleb Cushing
+//
+// SPDX-License-Identifier: MIT
+
+rootProject.name = "immutables-spotbugs-nullable-reproducer"
