@@ -12,11 +12,11 @@ spotbugs = { id = "com.github.spotbugs", version.ref = "spotbugs" }
 
 [libraries]
 immutables-bom = { module = "org.immutables:bom", version.ref = "immutables" }
-immutables-core = { module = "org.immutables:value" }
-immutables-builder = { module = "org.immutables:builder" }
+immutables-value = { module = "org.immutables:value" }
+immutables-annotations = { module = "org.immutables:value-annotations" }
 jspecify = { module = "org.jspecify:jspecify", version.ref = "jspecify" }
 jetbrains-annotations = { module = "org.jetbrains:annotations", version.ref = "jetbrains-annotations" }
 spotbugs = { module = "com.github.spotbugs:spotbugs", version = "4.9.3" }
 
 [bundles]
-immutables = ["immutables-builder"]
+immutables = ["immutables-annotations"]

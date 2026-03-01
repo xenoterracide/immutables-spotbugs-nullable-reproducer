@@ -23,7 +23,7 @@ public class Main {
   public ImmutableData createData(@Nullable String maybeNull, String required) {
     // This line triggers the false positive
     // SpotBugs thinks nullableField() doesn't accept null, but it does
-    return ImmutableData.builder()
+    return ImmutableImmutableData.builder()
       .nullableField(maybeNull)  // SpotBugs reports NP_NULL_PARAM_DEREF here
       .requiredField(required)
       .build();
@@ -33,7 +33,7 @@ public class Main {
    * This works fine because we're passing a literal null.
    */
   public ImmutableData createWithNullLiteral(String required) {
-    return ImmutableData.builder()
+    return ImmutableImmutableData.builder()
       .nullableField(null)  // No warning for literal null
       .requiredField(required)
       .build();

@@ -4,23 +4,21 @@
 
 package com.example;
 
-import org.immutables.builder.Builder;
+import org.immutables.value.Value;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Demonstrates SpotBugs false positive with Immutables @Builder and @Nullable.
+ * Demonstrates SpotBugs false positive with Immutables @Value.Immutable and @Nullable.
  *
  * <p>The generated builder correctly accepts null values for the nullable field,
  * but SpotBugs reports NP_NULL_PARAM_DEREF when passing a nullable variable
 to the builder.
  */
-@Builder
-public record ImmutableData(
-  @Nullable String nullableField,
-  String requiredField
-) {
+@Value.Immutable
+public interface ImmutableData {
 
-  public static ImmutableDataBuilder builder() {
-    return new ImmutableDataBuilder();
-  }
+  @Nullable
+  String nullableField();
+
+  String requiredField();
 }

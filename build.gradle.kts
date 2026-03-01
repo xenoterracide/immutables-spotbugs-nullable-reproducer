@@ -7,6 +7,10 @@ plugins {
   alias(libs.plugins.spotbugs)
 }
 
+repositories {
+  mavenCentral()
+}
+
 group = "com.example"
 version = "1.0.0"
 
@@ -21,7 +25,7 @@ dependencies {
   compileOnly(libs.jetbrains.annotations)
   
   annotationProcessor(platform(libs.immutables.bom))
-  annotationProcessor(libs.immutables.core)
+  annotationProcessor(libs.immutables.value)
   compileOnly(platform(libs.immutables.bom))
   compileOnly(libs.bundles.immutables)
   
